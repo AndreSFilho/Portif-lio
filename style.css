@@ -30,7 +30,7 @@ body {
 /* --- Alocação de Áreas do Grid --- */
 .header { grid-area: header; background-color: #333; color: white; padding: 20px; text-align: center; }
 .nav { grid-area: nav; background-color: #555; }
-.main { grid-area: main; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.main { grid-area: main; background-color: white; padding: 50px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 .aside { grid-area: aside; background-color: #e0e0e0; padding: 20px; border-radius: 8px; }
 .footer { grid-area: footer; background-color: #333; color: white; padding: 10px; text-align: center; }
 
@@ -130,54 +130,3 @@ body {
     }
 }
 
-.footer-social-icons {
-    display: flex;
-    gap: 20px; /* Espaço entre os ícones */
-    margin-top: 10px; /* Espaço entre o texto e os ícones */
-}
-
-.footer-social-link {
-    color: #ccc; /* Cor padrão dos ícones */
-    font-size: 1.8em; /* Tamanho dos ícones no rodapé */
-    transition: transform 0.3s ease, color 0.3s ease; /* Transição para animação e cor */
-    text-decoration: none; /* Remove sublinhado */
-}
-
-.footer-social-link:hover {
-    transform: translateY(-5px) scale(1.1); /* Animação: levanta e aumenta um pouco */
-}
-
-/* Cores de hover específicas para os ícones no rodapé */
-#footer-instagram:hover {
-    color: #e4405f; /* Cor do Instagram */
-}
-
-#footer-whatsapp:hover {
-    color: #25D366; /* Cor do WhatsApp */
-}
-
-#footer-linkedin:hover {
-    color: #0077B5; /* Cor do LinkedIn */
-}
-
-
-/* --- Estilos das Habilidades (Aside - sem alterações neste trecho) --- */
-.habilidades-lista {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px; /* Adicionei um pouco de margem superior para separar seções */
-}
-
-.habilidade {
-    background-color: #f9f9f9;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-left: 5px solid #77aaff;
-    cursor: default; 
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.habilidade:hover {
-    background-color: #fff;
-    transform: translateX(5px);
-}
