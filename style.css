@@ -1,0 +1,183 @@
+/* --- Estilos Gerais --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* --- Configuração do CSS Grid --- */
+.grid-container {
+    display: grid;
+    /* Define 3 colunas: uma de 1fr (flexível), uma de 3fr (3x maior), e uma de 1fr */
+    grid-template-columns: 1fr 3fr 1fr; 
+    /* Define 4 linhas */
+    grid-template-rows: auto 50px 1fr auto; 
+    /* Nomeia as áreas do Grid */
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "aside main main"
+        "footer footer footer";
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    gap: 10px; /* Espaço entre os itens do grid */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container */
+    padding: 10px;
+}
+
+/* --- Alocação de Áreas do Grid --- */
+.header { grid-area: header; background-color: #333; color: white; padding: 20px; text-align: center; }
+.nav { grid-area: nav; background-color: #555; }
+.main { grid-area: main; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.aside { grid-area: aside; background-color: #e0e0e0; padding: 20px; border-radius: 8px; }
+.footer { grid-area: footer; background-color: #333; color: white; padding: 10px; text-align: center; }
+
+/* --- Estilos do Conteúdo Principal (Main) --- */
+.perfil {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.imagem-container {
+    text-align: center;
+}
+
+.imagem-perfil {
+    width: 150px;
+    height: 150px;
+    background-color: #ccc; /* Cor para o placeholder */
+    border-radius: 50%;
+    object-fit: cover;
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    margin: 0 auto 10px;
+    border: 3px solid #77aaff;
+}
+
+.legenda {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Estilos da Navegação (Nav) e Efeito Hover --- */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.nav li a:hover {
+    background-color: #77aaff; /* Cor de fundo no hover */
+    color: #333; /* Cor do texto no hover */
+}
+
+/* --- Estilos do Aside e Efeito Hover Simples --- */
+.aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+.habilidade {
+    background-color: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-left: 5px solid #77aaff;
+    cursor: default; /* Indica que é interativo, mas sem link */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.habilidade:hover {
+    background-color: #fff;
+    transform: translateX(5px); /* Move ligeiramente para a direita no hover */
+}
+
+/* --- Media Queries para Responsividade (Opcional, mas recomendado para Grid) --- */
+@media (max-width: 768px) {
+    .grid-container {
+        /* Muda o layout para uma coluna única em telas menores */
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto auto auto 1fr auto;
+        /* Redefine as áreas */
+        grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "footer";
+    }
+    
+    .perfil {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        align-items: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px; /* Espaço entre os ícones */
+    margin-top: 10px; /* Espaço entre o texto e os ícones */
+}
+
+.footer-social-link {
+    color: #ccc; /* Cor padrão dos ícones */
+    font-size: 1.8em; /* Tamanho dos ícones no rodapé */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição para animação e cor */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.footer-social-link:hover {
+    transform: translateY(-5px) scale(1.1); /* Animação: levanta e aumenta um pouco */
+}
+
+/* Cores de hover específicas para os ícones no rodapé */
+#footer-instagram:hover {
+    color: #e4405f; /* Cor do Instagram */
+}
+
+#footer-whatsapp:hover {
+    color: #25D366; /* Cor do WhatsApp */
+}
+
+#footer-linkedin:hover {
+    color: #0077B5; /* Cor do LinkedIn */
+}
+
+
+/* --- Estilos das Habilidades (Aside - sem alterações neste trecho) --- */
+.habilidades-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Adicionei um pouco de margem superior para separar seções */
+}
+
+.habilidade {
+    background-color: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-left: 5px solid #77aaff;
+    cursor: default; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.habilidade:hover {
+    background-color: #fff;
+    transform: translateX(5px);
+}
